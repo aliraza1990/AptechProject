@@ -1,0 +1,107 @@
+﻿@model WebApplication4.walkin
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutReception.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>walkin</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.w_datetime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.w_datetime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.w_fullname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.w_fullname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.w_phone1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.w_phone1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.w_phone2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.w_phone2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.w_email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.w_email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.w_dob)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.w_dob)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.w_serialNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.w_serialNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.w_isAdmissionTaken)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.w_isAdmissionTaken)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.coursesOffered.co_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.coursesOffered.co_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mediaFormat.mf_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mediaFormat.mf_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.user.u_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user.u_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.w_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

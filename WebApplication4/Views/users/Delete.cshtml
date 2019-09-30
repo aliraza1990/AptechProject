@@ -1,0 +1,23 @@
+﻿@model WebApplication4.user
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2 style="margin-top:10px;">User Management</h2>
+
+<h3 style="margin-top:50px;margin-left:30px">Are you sure you want to delete @Html.DisplayFor(model => model.u_name)?</h3>
+<div>
+
+    <hr />
+   
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
