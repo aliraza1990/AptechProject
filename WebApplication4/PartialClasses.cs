@@ -10,4 +10,10 @@ namespace WebApplication4
     public partial class role
     {
     }
+    [MetadataType(typeof(DepartmentMetadata))]
+    public partial class department
+
+    {
+
+    }
 }

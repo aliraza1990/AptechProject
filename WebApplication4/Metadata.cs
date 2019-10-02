@@ -13,4 +13,14 @@ namespace WebApplication4
         [Display(Name = "Role")]
         public string r_name;
     }
+    public class DepartmentMetadata
+    {
+        [Display(Name = "ID")]
+        public int d_id { get; set; }
+        [Display(Name = " Department Name")]
+        [Required(ErrorMessage = "* Department Name required")]
+        public string d_name { get; set; }
+    }
+
+
 }
