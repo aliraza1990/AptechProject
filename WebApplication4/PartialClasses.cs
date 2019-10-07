@@ -10,4 +10,12 @@ namespace WebApplication4
     public partial class role
     {
     }
+    [MetadataType(typeof(DaysMetadata))]
+    public partial class dayss
+    {
+    }
+    [MetadataType(typeof(TimingMetadata))]
+    public partial class timing
+    {
+    }
 }

@@ -11,6 +11,22 @@ namespace WebApplication4
         [Display(Name = "ID")]
         public int r_id;
         [Display(Name = "Role")]
+        [Required(ErrorMessage = "* Role Required")]
         public string r_name;
     }
+    public class DaysMetadata
+    {
+        public byte d_id;
+        [Display(Name ="Day")]
+        [Required(ErrorMessage ="* Day Required")]
+        public string d_name;
+    }
+    public class TimingMetadata
+    {
+        public byte t_id;
+        [Display(Name = "Timing")]
+        [Required(ErrorMessage = "* Timing Required")]
+        public string t_name;
+    }
+
 }
