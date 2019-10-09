@@ -74,3 +74,41 @@ C:\Users\ali\Desktop\Ali Raza Data\My Products\AptechPortal\WebApplication4\obj\
 C:\Users\ali\Desktop\Ali Raza Data\My Products\AptechPortal\WebApplication4\obj\Debug\AptechPortal.csproj.CoreCompileInputs.cache
 C:\Users\ali\Desktop\Ali Raza Data\My Products\AptechPortal\WebApplication4\obj\Debug\WebApplication4.dll
 C:\Users\ali\Desktop\Ali Raza Data\My Products\AptechPortal\WebApplication4\obj\Debug\WebApplication4.pdb
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\roslyn\csc.exe
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\roslyn\vbc.exe
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\roslyn\VBCSCompiler.exe
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\WebApplication4.dll.config
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\WebApplication4.dll
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\WebApplication4.pdb
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\EntityFramework.dll
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\EntityFramework.SqlServer.dll
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\System.Web.Helpers.dll
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\System.Web.Mvc.dll
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\System.Web.Razor.dll
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\System.Web.Webpages.Deployment.dll
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\System.Web.Webpages.dll
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\System.Web.Webpages.Razor.dll
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\EntityFramework.xml
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\EntityFramework.SqlServer.xml
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\System.Web.Razor.xml
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\System.Web.Webpages.xml
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\System.Web.Webpages.Deployment.xml
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\System.Web.Webpages.Razor.xml
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\System.Web.Helpers.xml
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\bin\System.Web.Mvc.xml
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\obj\Debug\AptechPortal.csprojResolveAssemblyReference.cache
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\obj\Debug\AptechPortal.csproj.CoreCompileInputs.cache
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\obj\Debug\WebApplication4.dll
+C:\Users\asp.APTECHNK\Desktop\Ehtesham\WebApplication4\obj\Debug\WebApplication4.pdb
