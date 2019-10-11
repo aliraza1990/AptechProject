@@ -1,0 +1,45 @@
+﻿@model IEnumerable<WebApplication4.campus>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="margin-top:10px;">Campus Management</h2>
+
+<p>
+    @Html.ActionLink("Add New Campus", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.c_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.c_address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.c_phone)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.c_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.c_address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.c_phone)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.c_id }) |
+         
+            @Html.ActionLink("Delete", "Delete", new { id=item.c_id })
+        </td>
+    </tr>
+}
+
+</table>

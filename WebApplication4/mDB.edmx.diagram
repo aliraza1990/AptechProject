@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7a62610eaef5499da880993f95d0678c" Name="Diagram1" ZoomLevel="93">
+        <EntityTypeShape EntityType="aptechDBModel.batch" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="aptechDBModel.campus" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="aptechDBModel.curriculum" Width="1.5" PointX="6.375" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="aptechDBModel.dayss" Width="1.5" PointX="4.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="aptechDBModel.department" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="aptechDBModel.enrollType" Width="1.5" PointX="7.875" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="aptechDBModel.role" Width="1.5" PointX="0.625" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="aptechDBModel.semester" Width="1.5" PointX="8.375" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="aptechDBModel.timing" Width="1.5" PointX="2.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="aptechDBModel.user" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="aptechDBModel.FK__batch__b_dayID__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="aptechDBModel.FK__batch__b_facID__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="aptechDBModel.FK__batch__b_timID__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="aptechDBModel.FK__enrollTyp__et_cu__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="aptechDBModel.FK__semesters__s_cur__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="aptechDBModel.FK__users__u_departI__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="aptechDBModel.FK__users__u_roleID__2E1BDC42" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="aptechDBModel.coursesOffered" Width="1.5" PointX="13.5" PointY="5.125" />
+        <EntityTypeShape EntityType="aptechDBModel.mediaFormat" Width="1.5" PointX="13.5" PointY="2.75" />
+        <EntityTypeShape EntityType="aptechDBModel.walkin" Width="1.5" PointX="10.875" PointY="2.875" />
+        <AssociationConnector Association="aptechDBModel.FK__walkins__w_coID__14270015" />
+        <AssociationConnector Association="aptechDBModel.FK__walkins__w_mfID__151B244E" />
+        <AssociationConnector Association="aptechDBModel.FK__walkins__w_userI__160F4887" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

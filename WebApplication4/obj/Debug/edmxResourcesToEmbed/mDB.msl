@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="aptechDBModelStoreContainer" CdmEntityContainer="aptechDBEntities">
+    <EntitySetMapping Name="batches">
+      <EntityTypeMapping TypeName="aptechDBModel.batch">
+        <MappingFragment StoreEntitySet="batch">
+          <ScalarProperty Name="b_id" ColumnName="b_id" />
+          <ScalarProperty Name="b_name" ColumnName="b_name" />
+          <ScalarProperty Name="b_dayID" ColumnName="b_dayID" />
+          <ScalarProperty Name="b_timID" ColumnName="b_timID" />
+          <ScalarProperty Name="b_facID" ColumnName="b_facID" />
+          <ScalarProperty Name="b_status" ColumnName="b_status" />
+          <ScalarProperty Name="b_startDate" ColumnName="b_startDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="campuses">
+      <EntityTypeMapping TypeName="aptechDBModel.campus">
+        <MappingFragment StoreEntitySet="campuses">
+          <ScalarProperty Name="c_id" ColumnName="c_id" />
+          <ScalarProperty Name="c_name" ColumnName="c_name" />
+          <ScalarProperty Name="c_address" ColumnName="c_address" />
+          <ScalarProperty Name="c_phone" ColumnName="c_phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="curricula">
+      <EntityTypeMapping TypeName="aptechDBModel.curriculum">
+        <MappingFragment StoreEntitySet="curriculum">
+          <ScalarProperty Name="c_id" ColumnName="c_id" />
+          <ScalarProperty Name="c_name" ColumnName="c_name" />
+          <ScalarProperty Name="c_code" ColumnName="c_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="daysses">
+      <EntityTypeMapping TypeName="aptechDBModel.dayss">
+        <MappingFragment StoreEntitySet="dayss">
+          <ScalarProperty Name="d_id" ColumnName="d_id" />
+          <ScalarProperty Name="d_name" ColumnName="d_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="departments">
+      <EntityTypeMapping TypeName="aptechDBModel.department">
+        <MappingFragment StoreEntitySet="departments">
+          <ScalarProperty Name="d_id" ColumnName="d_id" />
+          <ScalarProperty Name="d_name" ColumnName="d_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="enrollTypes">
+      <EntityTypeMapping TypeName="aptechDBModel.enrollType">
+        <MappingFragment StoreEntitySet="enrollType">
+          <ScalarProperty Name="et_id" ColumnName="et_id" />
+          <ScalarProperty Name="et_name" ColumnName="et_name" />
+          <ScalarProperty Name="et_currID" ColumnName="et_currID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="roles">
+      <EntityTypeMapping TypeName="aptechDBModel.role">
+        <MappingFragment StoreEntitySet="roles">
+          <ScalarProperty Name="r_id" ColumnName="r_id" />
+          <ScalarProperty Name="r_name" ColumnName="r_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="semesters">
+      <EntityTypeMapping TypeName="aptechDBModel.semester">
+        <MappingFragment StoreEntitySet="semesters">
+          <ScalarProperty Name="s_id" ColumnName="s_id" />
+          <ScalarProperty Name="s_name" ColumnName="s_name" />
+          <ScalarProperty Name="s_currID" ColumnName="s_currID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="timings">
+      <EntityTypeMapping TypeName="aptechDBModel.timing">
+        <MappingFragment StoreEntitySet="timings">
+          <ScalarProperty Name="t_id" ColumnName="t_id" />
+          <ScalarProperty Name="t_name" ColumnName="t_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="aptechDBModel.user">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="u_name" ColumnName="u_name" />
+          <ScalarProperty Name="u_username" ColumnName="u_username" />
+          <ScalarProperty Name="u_pass" ColumnName="u_pass" />
+          <ScalarProperty Name="u_phone" ColumnName="u_phone" />
+          <ScalarProperty Name="u_email" ColumnName="u_email" />
+          <ScalarProperty Name="u_roleID" ColumnName="u_roleID" />
+          <ScalarProperty Name="u_departID" ColumnName="u_departID" />
+          <ScalarProperty Name="u_address" ColumnName="u_address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="st_getLoginDetails" FunctionName="aptechDBModel.Store.st_getLoginDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="aptechDBModel.st_getLoginDetails_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DepartID" ColumnName="DepartID" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="UID" ColumnName="UID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="st_getCampusCount" FunctionName="aptechDBModel.Store.st_getCampusCount" />
+    <EntitySetMapping Name="coursesOffereds">
+      <EntityTypeMapping TypeName="aptechDBModel.coursesOffered">
+        <MappingFragment StoreEntitySet="coursesOffered">
+          <ScalarProperty Name="co_name" ColumnName="co_name" />
+          <ScalarProperty Name="co_id" ColumnName="co_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mediaFormats">
+      <EntityTypeMapping TypeName="aptechDBModel.mediaFormat">
+        <MappingFragment StoreEntitySet="mediaFormats">
+          <ScalarProperty Name="mf_name" ColumnName="mf_name" />
+          <ScalarProperty Name="mf_id" ColumnName="mf_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="walkins">
+      <EntityTypeMapping TypeName="aptechDBModel.walkin">
+        <MappingFragment StoreEntitySet="walkins">
+          <ScalarProperty Name="w_isAdmissionTaken" ColumnName="w_isAdmissionTaken" />
+          <ScalarProperty Name="w_serialNo" ColumnName="w_serialNo" />
+          <ScalarProperty Name="w_userID" ColumnName="w_userID" />
+          <ScalarProperty Name="w_mfID" ColumnName="w_mfID" />
+          <ScalarProperty Name="w_coID" ColumnName="w_coID" />
+          <ScalarProperty Name="w_dob" ColumnName="w_dob" />
+          <ScalarProperty Name="w_email" ColumnName="w_email" />
+          <ScalarProperty Name="w_phone2" ColumnName="w_phone2" />
+          <ScalarProperty Name="w_phone1" ColumnName="w_phone1" />
+          <ScalarProperty Name="w_fullname" ColumnName="w_fullname" />
+          <ScalarProperty Name="w_datetime" ColumnName="w_datetime" />
+          <ScalarProperty Name="w_id" ColumnName="w_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="st_getTodaysWalkins" FunctionName="aptechDBModel.Store.st_getTodaysWalkins">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="aptechDBModel.st_getTodaysWalkins_Result1">
+          <ScalarProperty Name="WalkinID" ColumnName="WalkinID" />
+          <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

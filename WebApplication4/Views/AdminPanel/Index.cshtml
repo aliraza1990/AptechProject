@@ -1,0 +1,43 @@
+﻿<div class="row">
+    @{
+        var data = ViewBag.da;
+        int x = 1;
+        foreach (var item in data)
+        {
+
+            <div class="col-sm-2" style="background-color:#F8F9F9;height:100px;width:50px;margin:10px;">
+                @{
+                        if (x == 1)
+                        {
+                        <h6 class="text-center flex-md-wrap" style="margin-top:5%">Campuses</h6>
+                        }
+                        else if (x == 2)
+                        {
+                        <h6 class="text-center flex-md-wrap" style="margin-top:5%">Curriculum</h6>
+                        }
+                        else if (x == 3)
+                        {
+                        <h6 class="text-center flex-md-wrap" style="margin-top:5%">Roles</h6>
+                        }
+                        else if (x == 4)
+                        {
+                        <h6 class="text-center flex-md-wrap" style="margin-top:5%">Departments</h6>
+                        }
+                        else if (x == 5)
+                        {
+                        <h6 class="text-center flex-md-wrap" style="margin-top:5%">Users</h6>
+                        }
+                    x = x + 1;
+                    }
+
+                <hr />
+                <h5 class="text-center">@item</h5>
+               
+
+            </div>
+          
+        }
+    }
+
+
+    </div>

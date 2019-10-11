@@ -1,0 +1,39 @@
+﻿@model IEnumerable<WebApplication4.curriculum>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="margin-top:10px;">Curriculum Management</h2>
+
+<p>
+    @Html.ActionLink("Add New Curriculum", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.c_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.c_code)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.c_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.c_code)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.c_id }) |
+         
+            @Html.ActionLink("Delete", "Delete", new { id=item.c_id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,883 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="aptechDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="batch">
+          <Key>
+            <PropertyRef Name="b_id" />
+          </Key>
+          <Property Name="b_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="b_name" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="b_dayID" Type="tinyint" Nullable="false" />
+          <Property Name="b_timID" Type="tinyint" Nullable="false" />
+          <Property Name="b_facID" Type="int" Nullable="false" />
+          <Property Name="b_status" Type="tinyint" Nullable="false" />
+          <Property Name="b_startDate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="campuses">
+          <Key>
+            <PropertyRef Name="c_id" />
+          </Key>
+          <Property Name="c_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="c_name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="c_address" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="c_phone" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="coursesOffered">
+          <Key>
+            <PropertyRef Name="co_id" />
+          </Key>
+          <Property Name="co_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="co_name" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="curriculum">
+          <Key>
+            <PropertyRef Name="c_id" />
+          </Key>
+          <Property Name="c_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="c_name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="c_code" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dayss">
+          <Key>
+            <PropertyRef Name="d_id" />
+          </Key>
+          <Property Name="d_id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="d_name" Type="varchar" MaxLength="3" Nullable="false" />
+        </EntityType>
+        <EntityType Name="departments">
+          <Key>
+            <PropertyRef Name="d_id" />
+          </Key>
+          <Property Name="d_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="d_name" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="enrollType">
+          <Key>
+            <PropertyRef Name="et_id" />
+          </Key>
+          <Property Name="et_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="et_name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="et_currID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mediaFormats">
+          <Key>
+            <PropertyRef Name="mf_id" />
+          </Key>
+          <Property Name="mf_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="mf_name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="roles">
+          <Key>
+            <PropertyRef Name="r_id" />
+          </Key>
+          <Property Name="r_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="r_name" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="semesters">
+          <Key>
+            <PropertyRef Name="s_id" />
+          </Key>
+          <Property Name="s_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="s_name" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="s_currID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="timings">
+          <Key>
+            <PropertyRef Name="t_id" />
+          </Key>
+          <Property Name="t_id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="t_name" Type="varchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="u_id" />
+          </Key>
+          <Property Name="u_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="u_name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="u_username" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="u_pass" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="u_phone" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="u_email" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="u_roleID" Type="int" Nullable="false" />
+          <Property Name="u_departID" Type="int" Nullable="false" />
+          <Property Name="u_address" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="walkins">
+          <Key>
+            <PropertyRef Name="w_id" />
+          </Key>
+          <Property Name="w_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="w_datetime" Type="datetime" Nullable="false" />
+          <Property Name="w_fullname" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="w_phone1" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="w_phone2" Type="varchar" MaxLength="15" />
+          <Property Name="w_email" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="w_dob" Type="date" />
+          <Property Name="w_coID" Type="int" Nullable="false" />
+          <Property Name="w_mfID" Type="int" Nullable="false" />
+          <Property Name="w_userID" Type="int" Nullable="false" />
+          <Property Name="w_serialNo" Type="varchar" MaxLength="25" />
+          <Property Name="w_isAdmissionTaken" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__batch__b_dayID__35BCFE0A">
+          <End Role="dayss" Type="Self.dayss" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="batch" Type="Self.batch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dayss">
+              <PropertyRef Name="d_id" />
+            </Principal>
+            <Dependent Role="batch">
+              <PropertyRef Name="b_dayID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__batch__b_facID__36B12243">
+          <End Role="users" Type="Self.users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="batch" Type="Self.batch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="u_id" />
+            </Principal>
+            <Dependent Role="batch">
+              <PropertyRef Name="b_facID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__batch__b_timID__37A5467C">
+          <End Role="timings" Type="Self.timings" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="batch" Type="Self.batch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="timings">
+              <PropertyRef Name="t_id" />
+            </Principal>
+            <Dependent Role="batch">
+              <PropertyRef Name="b_timID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__enrollTyp__et_cu__38996AB5">
+          <End Role="curriculum" Type="Self.curriculum" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="enrollType" Type="Self.enrollType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="curriculum">
+              <PropertyRef Name="c_id" />
+            </Principal>
+            <Dependent Role="enrollType">
+              <PropertyRef Name="et_currID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__semesters__s_cur__398D8EEE">
+          <End Role="curriculum" Type="Self.curriculum" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="semesters" Type="Self.semesters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="curriculum">
+              <PropertyRef Name="c_id" />
+            </Principal>
+            <Dependent Role="semesters">
+              <PropertyRef Name="s_currID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__users__u_departI__3A81B327">
+          <End Role="departments" Type="Self.departments" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="users" Type="Self.users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="departments">
+              <PropertyRef Name="d_id" />
+            </Principal>
+            <Dependent Role="users">
+              <PropertyRef Name="u_departID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__users__u_roleID__3B75D760">
+          <End Role="roles" Type="Self.roles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="users" Type="Self.users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="roles">
+              <PropertyRef Name="r_id" />
+            </Principal>
+            <Dependent Role="users">
+              <PropertyRef Name="u_roleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__walkins__w_coID__3C69FB99">
+          <End Role="coursesOffered" Type="Self.coursesOffered" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="walkins" Type="Self.walkins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="coursesOffered">
+              <PropertyRef Name="co_id" />
+            </Principal>
+            <Dependent Role="walkins">
+              <PropertyRef Name="w_coID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__walkins__w_mfID__3D5E1FD2">
+          <End Role="mediaFormats" Type="Self.mediaFormats" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="walkins" Type="Self.walkins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mediaFormats">
+              <PropertyRef Name="mf_id" />
+            </Principal>
+            <Dependent Role="walkins">
+              <PropertyRef Name="w_mfID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__walkins__w_userI__3E52440B">
+          <End Role="users" Type="Self.users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="walkins" Type="Self.walkins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="u_id" />
+            </Principal>
+            <Dependent Role="walkins">
+              <PropertyRef Name="w_userID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="st_getCampusCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="st_getLoginDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user" Type="varchar" Mode="In" />
+          <Parameter Name="pass" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="st_getTodaysWalkins" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="day" Type="int" Mode="In" />
+          <Parameter Name="month" Type="int" Mode="In" />
+          <Parameter Name="year" Type="int" Mode="In" />
+          <Parameter Name="userID" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="aptechDBModelStoreContainer">
+          <EntitySet Name="batch" EntityType="Self.batch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="campuses" EntityType="Self.campuses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="coursesOffered" EntityType="Self.coursesOffered" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="curriculum" EntityType="Self.curriculum" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dayss" EntityType="Self.dayss" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="departments" EntityType="Self.departments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="enrollType" EntityType="Self.enrollType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mediaFormats" EntityType="Self.mediaFormats" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="roles" EntityType="Self.roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="semesters" EntityType="Self.semesters" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="timings" EntityType="Self.timings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="walkins" EntityType="Self.walkins" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__batch__b_dayID__35BCFE0A" Association="Self.FK__batch__b_dayID__35BCFE0A">
+            <End Role="dayss" EntitySet="dayss" />
+            <End Role="batch" EntitySet="batch" />
+          </AssociationSet>
+          <AssociationSet Name="FK__batch__b_facID__36B12243" Association="Self.FK__batch__b_facID__36B12243">
+            <End Role="users" EntitySet="users" />
+            <End Role="batch" EntitySet="batch" />
+          </AssociationSet>
+          <AssociationSet Name="FK__batch__b_timID__37A5467C" Association="Self.FK__batch__b_timID__37A5467C">
+            <End Role="timings" EntitySet="timings" />
+            <End Role="batch" EntitySet="batch" />
+          </AssociationSet>
+          <AssociationSet Name="FK__enrollTyp__et_cu__38996AB5" Association="Self.FK__enrollTyp__et_cu__38996AB5">
+            <End Role="curriculum" EntitySet="curriculum" />
+            <End Role="enrollType" EntitySet="enrollType" />
+          </AssociationSet>
+          <AssociationSet Name="FK__semesters__s_cur__398D8EEE" Association="Self.FK__semesters__s_cur__398D8EEE">
+            <End Role="curriculum" EntitySet="curriculum" />
+            <End Role="semesters" EntitySet="semesters" />
+          </AssociationSet>
+          <AssociationSet Name="FK__users__u_departI__3A81B327" Association="Self.FK__users__u_departI__3A81B327">
+            <End Role="departments" EntitySet="departments" />
+            <End Role="users" EntitySet="users" />
+          </AssociationSet>
+          <AssociationSet Name="FK__users__u_roleID__3B75D760" Association="Self.FK__users__u_roleID__3B75D760">
+            <End Role="roles" EntitySet="roles" />
+            <End Role="users" EntitySet="users" />
+          </AssociationSet>
+          <AssociationSet Name="FK__walkins__w_coID__3C69FB99" Association="Self.FK__walkins__w_coID__3C69FB99">
+            <End Role="coursesOffered" EntitySet="coursesOffered" />
+            <End Role="walkins" EntitySet="walkins" />
+          </AssociationSet>
+          <AssociationSet Name="FK__walkins__w_mfID__3D5E1FD2" Association="Self.FK__walkins__w_mfID__3D5E1FD2">
+            <End Role="mediaFormats" EntitySet="mediaFormats" />
+            <End Role="walkins" EntitySet="walkins" />
+          </AssociationSet>
+          <AssociationSet Name="FK__walkins__w_userI__3E52440B" Association="Self.FK__walkins__w_userI__3E52440B">
+            <End Role="users" EntitySet="users" />
+            <End Role="walkins" EntitySet="walkins" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="aptechDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="batch">
+          <Key>
+            <PropertyRef Name="b_id" />
+          </Key>
+          <Property Name="b_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="b_name" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="b_dayID" Type="Byte" Nullable="false" />
+          <Property Name="b_timID" Type="Byte" Nullable="false" />
+          <Property Name="b_facID" Type="Int32" Nullable="false" />
+          <Property Name="b_status" Type="Byte" Nullable="false" />
+          <Property Name="b_startDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="dayss" Relationship="Self.FK__batch__b_dayID__403A8C7D" FromRole="batch" ToRole="dayss" />
+          <NavigationProperty Name="user" Relationship="Self.FK__batch__b_facID__4222D4EF" FromRole="batch" ToRole="users" />
+          <NavigationProperty Name="timing" Relationship="Self.FK__batch__b_timID__412EB0B6" FromRole="batch" ToRole="timings" />
+        </EntityType>
+        <EntityType Name="campus">
+          <Key>
+            <PropertyRef Name="c_id" />
+          </Key>
+          <Property Name="c_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="c_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="c_address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="c_phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="curriculum">
+          <Key>
+            <PropertyRef Name="c_id" />
+          </Key>
+          <Property Name="c_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="c_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="c_code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="enrollTypes" Relationship="Self.FK__enrollTyp__et_cu__48CFD27E" FromRole="curriculum" ToRole="enrollType" />
+          <NavigationProperty Name="semesters" Relationship="Self.FK__semesters__s_cur__4D94879B" FromRole="curriculum" ToRole="semesters" />
+        </EntityType>
+        <EntityType Name="dayss">
+          <Key>
+            <PropertyRef Name="d_id" />
+          </Key>
+          <Property Name="d_id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="d_name" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="batches" Relationship="Self.FK__batch__b_dayID__403A8C7D" FromRole="dayss" ToRole="batch" />
+        </EntityType>
+        <EntityType Name="department">
+          <Key>
+            <PropertyRef Name="d_id" />
+          </Key>
+          <Property Name="d_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="d_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="users" Relationship="Self.FK__users__u_departI__2F10007B" FromRole="departments" ToRole="users" />
+        </EntityType>
+        <EntityType Name="enrollType">
+          <Key>
+            <PropertyRef Name="et_id" />
+          </Key>
+          <Property Name="et_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="et_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="et_currID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="curriculum" Relationship="Self.FK__enrollTyp__et_cu__48CFD27E" FromRole="enrollType" ToRole="curriculum" />
+        </EntityType>
+        <EntityType Name="role">
+          <Key>
+            <PropertyRef Name="r_id" />
+          </Key>
+          <Property Name="r_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="r_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="users" Relationship="Self.FK__users__u_roleID__2E1BDC42" FromRole="roles" ToRole="users" />
+        </EntityType>
+        <EntityType Name="semester">
+          <Key>
+            <PropertyRef Name="s_id" />
+          </Key>
+          <Property Name="s_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="s_name" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="s_currID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="curriculum" Relationship="Self.FK__semesters__s_cur__4D94879B" FromRole="semesters" ToRole="curriculum" />
+        </EntityType>
+        <EntityType Name="timing">
+          <Key>
+            <PropertyRef Name="t_id" />
+          </Key>
+          <Property Name="t_id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="t_name" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="batches" Relationship="Self.FK__batch__b_timID__412EB0B6" FromRole="timings" ToRole="batch" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="u_id" />
+          </Key>
+          <Property Name="u_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="u_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="u_username" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="u_pass" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="u_phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="u_email" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="u_roleID" Type="Int32" Nullable="false" />
+          <Property Name="u_departID" Type="Int32" Nullable="false" />
+          <Property Name="u_address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="batches" Relationship="Self.FK__batch__b_facID__4222D4EF" FromRole="users" ToRole="batch" />
+          <NavigationProperty Name="department" Relationship="Self.FK__users__u_departI__2F10007B" FromRole="users" ToRole="departments" />
+          <NavigationProperty Name="role" Relationship="Self.FK__users__u_roleID__2E1BDC42" FromRole="users" ToRole="roles" />
+          <NavigationProperty Name="walkins" Relationship="aptechDBModel.FK__walkins__w_userI__160F4887" FromRole="user" ToRole="walkin" />
+        </EntityType>
+        <Association Name="FK__batch__b_dayID__403A8C7D">
+          <End Role="dayss" Type="Self.dayss" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="batch" Type="Self.batch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dayss">
+              <PropertyRef Name="d_id" />
+            </Principal>
+            <Dependent Role="batch">
+              <PropertyRef Name="b_dayID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__batch__b_facID__4222D4EF">
+          <End Role="users" Type="Self.user" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="batch" Type="Self.batch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="u_id" />
+            </Principal>
+            <Dependent Role="batch">
+              <PropertyRef Name="b_facID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__batch__b_timID__412EB0B6">
+          <End Role="timings" Type="Self.timing" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="batch" Type="Self.batch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="timings">
+              <PropertyRef Name="t_id" />
+            </Principal>
+            <Dependent Role="batch">
+              <PropertyRef Name="b_timID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__enrollTyp__et_cu__48CFD27E">
+          <End Role="curriculum" Type="Self.curriculum" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="enrollType" Type="Self.enrollType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="curriculum">
+              <PropertyRef Name="c_id" />
+            </Principal>
+            <Dependent Role="enrollType">
+              <PropertyRef Name="et_currID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__semesters__s_cur__4D94879B">
+          <End Role="curriculum" Type="Self.curriculum" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="semesters" Type="Self.semester" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="curriculum">
+              <PropertyRef Name="c_id" />
+            </Principal>
+            <Dependent Role="semesters">
+              <PropertyRef Name="s_currID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__users__u_departI__2F10007B">
+          <End Role="departments" Type="Self.department" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="users" Type="Self.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="departments">
+              <PropertyRef Name="d_id" />
+            </Principal>
+            <Dependent Role="users">
+              <PropertyRef Name="u_departID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__users__u_roleID__2E1BDC42">
+          <End Role="roles" Type="Self.role" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="users" Type="Self.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="roles">
+              <PropertyRef Name="r_id" />
+            </Principal>
+            <Dependent Role="users">
+              <PropertyRef Name="u_roleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="aptechDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="batches" EntityType="Self.batch" />
+          <EntitySet Name="campuses" EntityType="Self.campus" />
+          <EntitySet Name="curricula" EntityType="Self.curriculum" />
+          <EntitySet Name="daysses" EntityType="Self.dayss" />
+          <EntitySet Name="departments" EntityType="Self.department" />
+          <EntitySet Name="enrollTypes" EntityType="Self.enrollType" />
+          <EntitySet Name="roles" EntityType="Self.role" />
+          <EntitySet Name="semesters" EntityType="Self.semester" />
+          <EntitySet Name="timings" EntityType="Self.timing" />
+          <EntitySet Name="users" EntityType="Self.user" />
+          <AssociationSet Name="FK__batch__b_dayID__403A8C7D" Association="Self.FK__batch__b_dayID__403A8C7D">
+            <End Role="dayss" EntitySet="daysses" />
+            <End Role="batch" EntitySet="batches" />
+          </AssociationSet>
+          <AssociationSet Name="FK__batch__b_facID__4222D4EF" Association="Self.FK__batch__b_facID__4222D4EF">
+            <End Role="users" EntitySet="users" />
+            <End Role="batch" EntitySet="batches" />
+          </AssociationSet>
+          <AssociationSet Name="FK__batch__b_timID__412EB0B6" Association="Self.FK__batch__b_timID__412EB0B6">
+            <End Role="timings" EntitySet="timings" />
+            <End Role="batch" EntitySet="batches" />
+          </AssociationSet>
+          <AssociationSet Name="FK__enrollTyp__et_cu__48CFD27E" Association="Self.FK__enrollTyp__et_cu__48CFD27E">
+            <End Role="curriculum" EntitySet="curricula" />
+            <End Role="enrollType" EntitySet="enrollTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__semesters__s_cur__4D94879B" Association="Self.FK__semesters__s_cur__4D94879B">
+            <End Role="curriculum" EntitySet="curricula" />
+            <End Role="semesters" EntitySet="semesters" />
+          </AssociationSet>
+          <AssociationSet Name="FK__users__u_departI__2F10007B" Association="Self.FK__users__u_departI__2F10007B">
+            <End Role="departments" EntitySet="departments" />
+            <End Role="users" EntitySet="users" />
+          </AssociationSet>
+          <AssociationSet Name="FK__users__u_roleID__2E1BDC42" Association="Self.FK__users__u_roleID__2E1BDC42">
+            <End Role="roles" EntitySet="roles" />
+            <End Role="users" EntitySet="users" />
+          </AssociationSet>
+          <FunctionImport Name="st_getLoginDetails" ReturnType="Collection(aptechDBModel.st_getLoginDetails_Result)">
+            <Parameter Name="user" Mode="In" Type="String" />
+            <Parameter Name="pass" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="st_getCampusCount" ReturnType="Collection(Int32)" />
+          <EntitySet Name="coursesOffereds" EntityType="aptechDBModel.coursesOffered" />
+          <EntitySet Name="mediaFormats" EntityType="aptechDBModel.mediaFormat" />
+          <EntitySet Name="walkins" EntityType="aptechDBModel.walkin" />
+          <AssociationSet Name="FK__walkins__w_coID__14270015" Association="aptechDBModel.FK__walkins__w_coID__14270015">
+            <End Role="coursesOffered" EntitySet="coursesOffereds" />
+            <End Role="walkin" EntitySet="walkins" />
+          </AssociationSet>
+          <AssociationSet Name="FK__walkins__w_mfID__151B244E" Association="aptechDBModel.FK__walkins__w_mfID__151B244E">
+            <End Role="mediaFormat" EntitySet="mediaFormats" />
+            <End Role="walkin" EntitySet="walkins" />
+          </AssociationSet>
+          <AssociationSet Name="FK__walkins__w_userI__160F4887" Association="aptechDBModel.FK__walkins__w_userI__160F4887">
+            <End Role="user" EntitySet="users" />
+            <End Role="walkin" EntitySet="walkins" />
+          </AssociationSet>
+          <FunctionImport Name="st_getTodaysWalkins" ReturnType="Collection(aptechDBModel.st_getTodaysWalkins_Result1)">
+            <Parameter Name="day" Mode="In" Type="Int32" />
+            <Parameter Name="month" Mode="In" Type="Int32" />
+            <Parameter Name="year" Mode="In" Type="Int32" />
+            <Parameter Name="userID" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="st_getLoginDetails_Result">
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="30" />
+          <Property Type="Int32" Name="DepartID" Nullable="false" />
+          <Property Type="String" Name="Department" Nullable="false" MaxLength="30" />
+          <Property Type="Int32" Name="RoleID" Nullable="false" />
+          <Property Type="String" Name="Role" Nullable="false" MaxLength="30" />
+          <Property Type="Int32" Name="UID" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="coursesOffered">
+          <Key>
+            <PropertyRef Name="co_id" />
+          </Key>
+          <Property Name="co_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="co_name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="walkins" Relationship="aptechDBModel.FK__walkins__w_coID__14270015" FromRole="coursesOffered" ToRole="walkin" />
+        </EntityType>
+        <EntityType Name="mediaFormat">
+          <Key>
+            <PropertyRef Name="mf_id" />
+          </Key>
+          <Property Name="mf_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="mf_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="walkins" Relationship="aptechDBModel.FK__walkins__w_mfID__151B244E" FromRole="mediaFormat" ToRole="walkin" />
+        </EntityType>
+        <EntityType Name="walkin">
+          <Key>
+            <PropertyRef Name="w_id" />
+          </Key>
+          <Property Name="w_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="w_datetime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="w_fullname" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="w_phone1" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="w_phone2" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="w_email" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="w_dob" Type="DateTime" Precision="0" />
+          <Property Name="w_coID" Type="Int32" Nullable="false" />
+          <Property Name="w_mfID" Type="Int32" Nullable="false" />
+          <Property Name="w_userID" Type="Int32" Nullable="false" />
+          <Property Name="w_serialNo" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="w_isAdmissionTaken" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="coursesOffered" Relationship="aptechDBModel.FK__walkins__w_coID__14270015" FromRole="walkin" ToRole="coursesOffered" />
+          <NavigationProperty Name="mediaFormat" Relationship="aptechDBModel.FK__walkins__w_mfID__151B244E" FromRole="walkin" ToRole="mediaFormat" />
+          <NavigationProperty Name="user" Relationship="aptechDBModel.FK__walkins__w_userI__160F4887" FromRole="walkin" ToRole="user" />
+        </EntityType>
+        <Association Name="FK__walkins__w_coID__14270015">
+          <End Type="aptechDBModel.coursesOffered" Role="coursesOffered" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="aptechDBModel.walkin" Role="walkin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="coursesOffered">
+              <PropertyRef Name="co_id" />
+            </Principal>
+            <Dependent Role="walkin">
+              <PropertyRef Name="w_coID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__walkins__w_mfID__151B244E">
+          <End Type="aptechDBModel.mediaFormat" Role="mediaFormat" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="aptechDBModel.walkin" Role="walkin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mediaFormat">
+              <PropertyRef Name="mf_id" />
+            </Principal>
+            <Dependent Role="walkin">
+              <PropertyRef Name="w_mfID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__walkins__w_userI__160F4887">
+          <End Type="aptechDBModel.user" Role="user" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="aptechDBModel.walkin" Role="walkin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="u_id" />
+            </Principal>
+            <Dependent Role="walkin">
+              <PropertyRef Name="w_userID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="st_getTodaysWalkins_Result">
+          <Property Type="Int64" Name="WalkinID" Nullable="false" />
+          <Property Type="String" Name="Fullname" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="Phone_1" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="Phone_2" Nullable="true" MaxLength="15" />
+        </ComplexType>
+        <ComplexType Name="st_getTodaysWalkins_Result1">
+          <Property Type="Int64" Name="WalkinID" Nullable="false" />
+          <Property Type="String" Name="Fullname" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="Phone1" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="Phone2" Nullable="true" MaxLength="15" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="aptechDBModelStoreContainer" CdmEntityContainer="aptechDBEntities">
+          <EntitySetMapping Name="batches">
+            <EntityTypeMapping TypeName="aptechDBModel.batch">
+              <MappingFragment StoreEntitySet="batch">
+                <ScalarProperty Name="b_id" ColumnName="b_id" />
+                <ScalarProperty Name="b_name" ColumnName="b_name" />
+                <ScalarProperty Name="b_dayID" ColumnName="b_dayID" />
+                <ScalarProperty Name="b_timID" ColumnName="b_timID" />
+                <ScalarProperty Name="b_facID" ColumnName="b_facID" />
+                <ScalarProperty Name="b_status" ColumnName="b_status" />
+                <ScalarProperty Name="b_startDate" ColumnName="b_startDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="campuses">
+            <EntityTypeMapping TypeName="aptechDBModel.campus">
+              <MappingFragment StoreEntitySet="campuses">
+                <ScalarProperty Name="c_id" ColumnName="c_id" />
+                <ScalarProperty Name="c_name" ColumnName="c_name" />
+                <ScalarProperty Name="c_address" ColumnName="c_address" />
+                <ScalarProperty Name="c_phone" ColumnName="c_phone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="curricula">
+            <EntityTypeMapping TypeName="aptechDBModel.curriculum">
+              <MappingFragment StoreEntitySet="curriculum">
+                <ScalarProperty Name="c_id" ColumnName="c_id" />
+                <ScalarProperty Name="c_name" ColumnName="c_name" />
+                <ScalarProperty Name="c_code" ColumnName="c_code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="daysses">
+            <EntityTypeMapping TypeName="aptechDBModel.dayss">
+              <MappingFragment StoreEntitySet="dayss">
+                <ScalarProperty Name="d_id" ColumnName="d_id" />
+                <ScalarProperty Name="d_name" ColumnName="d_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="departments">
+            <EntityTypeMapping TypeName="aptechDBModel.department">
+              <MappingFragment StoreEntitySet="departments">
+                <ScalarProperty Name="d_id" ColumnName="d_id" />
+                <ScalarProperty Name="d_name" ColumnName="d_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="enrollTypes">
+            <EntityTypeMapping TypeName="aptechDBModel.enrollType">
+              <MappingFragment StoreEntitySet="enrollType">
+                <ScalarProperty Name="et_id" ColumnName="et_id" />
+                <ScalarProperty Name="et_name" ColumnName="et_name" />
+                <ScalarProperty Name="et_currID" ColumnName="et_currID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="roles">
+            <EntityTypeMapping TypeName="aptechDBModel.role">
+              <MappingFragment StoreEntitySet="roles">
+                <ScalarProperty Name="r_id" ColumnName="r_id" />
+                <ScalarProperty Name="r_name" ColumnName="r_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="semesters">
+            <EntityTypeMapping TypeName="aptechDBModel.semester">
+              <MappingFragment StoreEntitySet="semesters">
+                <ScalarProperty Name="s_id" ColumnName="s_id" />
+                <ScalarProperty Name="s_name" ColumnName="s_name" />
+                <ScalarProperty Name="s_currID" ColumnName="s_currID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="timings">
+            <EntityTypeMapping TypeName="aptechDBModel.timing">
+              <MappingFragment StoreEntitySet="timings">
+                <ScalarProperty Name="t_id" ColumnName="t_id" />
+                <ScalarProperty Name="t_name" ColumnName="t_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="aptechDBModel.user">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="u_id" ColumnName="u_id" />
+                <ScalarProperty Name="u_name" ColumnName="u_name" />
+                <ScalarProperty Name="u_username" ColumnName="u_username" />
+                <ScalarProperty Name="u_pass" ColumnName="u_pass" />
+                <ScalarProperty Name="u_phone" ColumnName="u_phone" />
+                <ScalarProperty Name="u_email" ColumnName="u_email" />
+                <ScalarProperty Name="u_roleID" ColumnName="u_roleID" />
+                <ScalarProperty Name="u_departID" ColumnName="u_departID" />
+                <ScalarProperty Name="u_address" ColumnName="u_address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="st_getLoginDetails" FunctionName="aptechDBModel.Store.st_getLoginDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="aptechDBModel.st_getLoginDetails_Result">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DepartID" ColumnName="DepartID" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="st_getCampusCount" FunctionName="aptechDBModel.Store.st_getCampusCount" />
+          <EntitySetMapping Name="coursesOffereds">
+            <EntityTypeMapping TypeName="aptechDBModel.coursesOffered">
+              <MappingFragment StoreEntitySet="coursesOffered">
+                <ScalarProperty Name="co_name" ColumnName="co_name" />
+                <ScalarProperty Name="co_id" ColumnName="co_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mediaFormats">
+            <EntityTypeMapping TypeName="aptechDBModel.mediaFormat">
+              <MappingFragment StoreEntitySet="mediaFormats">
+                <ScalarProperty Name="mf_name" ColumnName="mf_name" />
+                <ScalarProperty Name="mf_id" ColumnName="mf_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="walkins">
+            <EntityTypeMapping TypeName="aptechDBModel.walkin">
+              <MappingFragment StoreEntitySet="walkins">
+                <ScalarProperty Name="w_isAdmissionTaken" ColumnName="w_isAdmissionTaken" />
+                <ScalarProperty Name="w_serialNo" ColumnName="w_serialNo" />
+                <ScalarProperty Name="w_userID" ColumnName="w_userID" />
+                <ScalarProperty Name="w_mfID" ColumnName="w_mfID" />
+                <ScalarProperty Name="w_coID" ColumnName="w_coID" />
+                <ScalarProperty Name="w_dob" ColumnName="w_dob" />
+                <ScalarProperty Name="w_email" ColumnName="w_email" />
+                <ScalarProperty Name="w_phone2" ColumnName="w_phone2" />
+                <ScalarProperty Name="w_phone1" ColumnName="w_phone1" />
+                <ScalarProperty Name="w_fullname" ColumnName="w_fullname" />
+                <ScalarProperty Name="w_datetime" ColumnName="w_datetime" />
+                <ScalarProperty Name="w_id" ColumnName="w_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="st_getTodaysWalkins" FunctionName="aptechDBModel.Store.st_getTodaysWalkins">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="aptechDBModel.st_getTodaysWalkins_Result1">
+                <ScalarProperty Name="WalkinID" ColumnName="WalkinID" />
+                <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+                <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+                <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

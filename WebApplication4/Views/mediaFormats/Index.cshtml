@@ -1,0 +1,34 @@
+﻿@model IEnumerable<WebApplication4.mediaFormat>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.mf_name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.mf_name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.mf_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.mf_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.mf_id })
+        </td>
+    </tr>
+}
+
+</table>
